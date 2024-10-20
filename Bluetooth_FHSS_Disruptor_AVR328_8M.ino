@@ -37,5 +37,8 @@ void RFsetup() {
 }
 
 void loop() {
-  radio1.setChannel(random(0,80)); //run FHSS carrier from 0 to 80
+  //radio1.setChannel(random(0,80)); //run FHSS carrier from 0 to 80
+
+  for (uint8_t i=1; i<40; i++){
+  radio1.setChannel(i*2); //overlap channels to best performance (nrf uses 2MHz bandwidth 80/2 = 40 channels ovelap)
 }
